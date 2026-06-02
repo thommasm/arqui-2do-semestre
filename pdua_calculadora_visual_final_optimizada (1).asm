@@ -1,32 +1,3 @@
-; =============================================================
-; PROYECTO FINAL - CALCULADORA VISUAL PDUA
-; Version optimizada para 256 bytes de RAM
-;
-; MMIO:
-;   Keypad = 0xEE
-;   VRAM   = 0xF0 a 0xF7
-;
-; Esta version usa la estrategia util del codigo de ejemplo:
-; - Lee el byte completo del keypad.
-; - Compara contra los casos minimos del enunciado.
-; - Limpia VRAM con una subrutina compacta.
-; - Escribe directamente los patrones esperados en 0xF0-0xF7.
-; - Usa 0xE9 y 0xEA como variables temporales.
-;
-; Direcciones aproximadas de etiquetas:
-; MAIN  = 0x00
-; C1    = 0x1D
-; C2    = 0x27
-; L2    = 0x35
-; R2    = 0x50
-; C3    = 0x58
-; C5    = 0x8C
-; CLEAR = 0xC0
-; LC    = 0xCC
-; EC    = 0xE7
-;
-; Tamano estimado: 0xE8 bytes = 232 bytes
-; =============================================================
 
 MAIN:
     ; Leer Keypad desde direccion 0xEE
